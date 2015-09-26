@@ -9,7 +9,7 @@ Uses the following libraries :
 * Apache HttpClient      : http://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
 * Gson                   : http://mvnrepository.com/artifact/com.google.code.gson/gson
 
-These can be downloaded with the downloadDependencies.sh scrip in the scripts folder
+These can be downloaded with the downloadDependencies.sh script in the scripts folder
 
 **Usage :**
 
