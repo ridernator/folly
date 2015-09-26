@@ -11,5 +11,5 @@ Uses the following libraries :
 
 These can be downloaded with the downloadDependencies.sh scrip in the scripts folder
 
-**Usage : **
+**Usage :**
 See the Test.java file in the com.rider.folly package
