@@ -13,4 +13,4 @@ It is based on the [Betfair JSON API](https://api.developer.betfair.com/services
 
 **Usage :**
 
-See the [Test.java file](src/main/com/rider/folly/Test.java) in the [com.rider.folly](src/main/com/rider/folly) package
+See the Test.java file in the com.rider.folly package
