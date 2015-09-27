@@ -15,11 +15,11 @@ public class PriceSize {
      */
     private double size;
 
-    public double getPrice() {
+    public double getOdds() {
         return price;
     }
 
-    public double getSize() {
+    public double getAmount() {
         return size;
     }
 
@@ -36,8 +36,8 @@ public class PriceSize {
             indentString += ' ';
         }
 
-        builder.append(indentString).append("Price : ").append(getPrice()).append('\n');
-        builder.append(indentString).append("Size  : ").append(getSize()).append('\n');
+        builder.append(indentString).append("Odds   : ").append(getOdds()).append('\n');
+        builder.append(indentString).append("Amount : ").append(getAmount()).append('\n');
 
         return builder.toString();
     }
