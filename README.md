@@ -3,8 +3,6 @@
 
 Uses the following libraries :
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
 * [Apache Commons Logging](https://commons.apache.org/proper/commons-logging "Apache Commons Logging")
 * [Apache Commons Codec](https://commons.apache.org/proper/commons-codec "Apache Commons Codec")
 * [Apache HttpCore](https://hc.apache.org/httpcomponents-core-ga "Apache HttpCore")
