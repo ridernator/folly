@@ -3,14 +3,16 @@
 
 Uses the following libraries :
 
-* Apache Commons Logging : http://mvnrepository.com/artifact/commons-logging/commons-logging
-* Apache Commons Codec   : http://mvnrepository.com/artifact/commons-codec/commons-codec
-* Apache HttpCore        : http://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore
-* Apache HttpClient      : http://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
-* Gson                   : http://mvnrepository.com/artifact/com.google.code.gson/gson
+[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 
-These can be downloaded with the downloadDependencies.sh script in the scripts folder
+* [Apache Commons Logging](https://commons.apache.org/proper/commons-logging "Apache Commons Logging")
+* [Apache Commons Codec](https://commons.apache.org/proper/commons-codec "Apache Commons Codec")
+* [Apache HttpCore](https://hc.apache.org/httpcomponents-core-ga "Apache HttpCore")
+* [Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga "Apache HttpClient")
+* [Google gson](https://github.com/google/gson "Google gson")
+
+It is based on the [Betfair JSON API](https://api.developer.betfair.com/services/webapps/docs/display/1smk3cen4v3lu3yomq5qye0ni/API+Overview "Betfair JSON API")
 
 **Usage :**
 
-See the Test.java file in the com.rider.folly package
+See the [Test.java file](src/main/com/rider/folly/Test.java) in the [com.rider.folly](src/main/com/rider/folly) package

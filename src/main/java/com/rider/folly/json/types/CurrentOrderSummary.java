@@ -227,7 +227,13 @@ public class CurrentOrderSummary {
         builder.append(indentString).append("Persistence Type      : ").append(getPersistenceType()).append('\n');
         builder.append(indentString).append("Order Type            : ").append(getOrderType()).append('\n');
         builder.append(indentString).append("Placed Date           : ").append(getPlacedDate()).append('\n');
-        builder.append(indentString).append("Matched Date          : ").append(getMatchedDate()).append('\n');
+
+        if (getMatchedDate() == null) {
+            builder.append(indentString).append("Matched Date          : ").append("Not Matched").append('\n');
+        } else {
+            builder.append(indentString).append("Matched Date          : ").append(getMatchedDate()).append('\n');
+        }
+        
         builder.append(indentString).append("Average Price Matched : ").append(getAveragePriceMatched()).append('\n');
         builder.append(indentString).append("Size Matched          : ").append(getSizeMatched()).append('\n');
         builder.append(indentString).append("Size Remaining        : ").append(getSizeRemaining()).append('\n');
