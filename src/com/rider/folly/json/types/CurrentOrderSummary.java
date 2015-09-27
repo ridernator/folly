@@ -210,6 +210,7 @@ public class CurrentOrderSummary {
             indentString += ' ';
         }
 
+        builder.append(indentString).append("Bet Id                : ").append(getBetId()).append('\n');
         builder.append(indentString).append("Market Id             : ").append(getMarketId()).append('\n');
         builder.append(indentString).append("Selection Id          : ").append(getSelectionId()).append('\n');
         builder.append(indentString).append("Handicap              : ").append(getHandicap()).append('\n');
