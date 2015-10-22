@@ -53,7 +53,7 @@ public class Match {
         return matchId;
     }
 
-    public double getPrice() {
+    public double getOdds() {
         return price;
     }
 
@@ -61,7 +61,7 @@ public class Match {
         return side;
     }
 
-    public double getSize() {
+    public double getAmount() {
         return size;
     }
 
@@ -81,8 +81,8 @@ public class Match {
         builder.append(indentString).append("Bet Id     : ").append(getBetId()).append('\n');
         builder.append(indentString).append("Match Id   : ").append(getMatchId()).append('\n');
         builder.append(indentString).append("Side       : ").append(getSide()).append('\n');
-        builder.append(indentString).append("Price      : ").append(getPrice()).append('\n');
-        builder.append(indentString).append("Size       : ").append(getSize()).append('\n');
+        builder.append(indentString).append("Odds       : ").append(getOdds()).append('\n');
+        builder.append(indentString).append("Amount     : ").append(getAmount()).append('\n');
         builder.append(indentString).append("Match Date : ").append(getMatchDate()).append('\n');
 
         return builder.toString();

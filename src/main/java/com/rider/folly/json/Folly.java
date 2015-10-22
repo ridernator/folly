@@ -14,6 +14,7 @@ import com.rider.folly.utils.SessionMaintainer;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -43,12 +44,16 @@ public class Folly {
 
     private static final Gson gson = new GsonBuilder()
             .setPrettyPrinting()
-            .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+            .registerTypeAdapter(Date.class, new ISO8601DateTypeAdapter())
             .create();
 
-    private static final JsonResponseHandler responseHandler = new JsonResponseHandler();
+    private static final RequestConfig requestConfig = RequestConfig
+            .custom()
+            .setConnectTimeout(TIMEOUT)
+            .setSocketTimeout(TIMEOUT)
+            .build();
 
-    private static final RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(TIMEOUT).setSocketTimeout(TIMEOUT).build();
+    private static final JsonResponseHandler responseHandler = new JsonResponseHandler();
 
     private static final HttpClient httpClient = HttpClientBuilder.create().build();
 

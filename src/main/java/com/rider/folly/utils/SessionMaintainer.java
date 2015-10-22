@@ -29,7 +29,7 @@ public class SessionMaintainer extends Thread {
     private boolean loggedIn;
 
     public SessionMaintainer() {
-        super();
+        super("Session Maintainer");
 
         loggedIn = false;
 
@@ -46,6 +46,8 @@ public class SessionMaintainer extends Thread {
 
     @Override
     public void run() {
+        long sleepUntil;
+
         while (true) {
             while (!loggedIn) {
                 try {
@@ -64,16 +66,20 @@ public class SessionMaintainer extends Thread {
                 }
             }
 
+            sleepUntil = System.currentTimeMillis() + KEEP_ALIVE_SLEEP_PERIOD;
+
             while (loggedIn) {
                 try {
-                    Thread.sleep(KEEP_ALIVE_SLEEP_PERIOD);
-                } catch (final InterruptedException interruptedException) {
+                    Thread.sleep(sleepUntil - System.currentTimeMillis());
+                } catch (final InterruptedException | IllegalArgumentException exception) {
                     // Ignore
                 }
 
                 try {
                     Folly.keepAlive();
                     System.out.println("Keep alive sent and acknowledged OK");
+
+                    sleepUntil += KEEP_ALIVE_SLEEP_PERIOD;
                 } catch (final FollyException exception) {
                     System.err.println("Error in keep alive : \"" + exception.getMessage() + '\"');
 

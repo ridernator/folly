@@ -16,15 +16,54 @@ public class ReplaceInstruction {
     /**
      * The price to replace the bet at
      */
-    private double newPrice;
+    private String newPrice;
 
     public String getBetId() {
         return betId;
     }
 
-    public double getNewPrice() {
-        return newPrice;
+    public double getNewOdds() {
+        return Double.valueOf(newPrice);
     }
+
+    public void setBetId(final String betId) {
+        this.betId = betId;
+    }
+
+    public void setNewOdds(double odds) {        
+        double convertedPrice;
+
+        if (odds < 2) {
+            newPrice = String.format("%.2f", odds);
+        } else if (odds <= 3) {
+            convertedPrice = odds - odds % 0.02;
+            newPrice = String.format("%.2f", convertedPrice);
+        } else if (odds <= 4) {
+            convertedPrice = odds - odds % 0.05;
+            newPrice = String.format("%.2f", convertedPrice);
+        } else if (odds <= 6) {
+            convertedPrice = odds - odds % 0.1;
+            newPrice = String.format("%.1f", convertedPrice);
+        } else if (odds <= 10) {
+            convertedPrice = odds - odds % 0.2;
+            newPrice = String.format("%.1f", convertedPrice);
+        } else if (odds <= 20) {
+            convertedPrice = odds - odds % 0.5;
+            newPrice = String.format("%.1f", convertedPrice);
+        } else if (odds <= 30) {
+            convertedPrice = odds - odds % 1.0;
+            newPrice = String.format("%.0f", convertedPrice);
+        } else if (odds <= 50) {
+            convertedPrice = odds - odds % 2.0;
+            newPrice = String.format("%.0f", convertedPrice);
+        } else if (odds <= 100) {
+            convertedPrice = odds - odds % 5.0;
+            newPrice = String.format("%.0f", convertedPrice);
+        } else {
+            convertedPrice = odds - odds % 10.0;
+            newPrice = String.format("%.0f", convertedPrice);
+        }
+    }  
 
     @Override
     public String toString() {
@@ -40,7 +79,7 @@ public class ReplaceInstruction {
         }
 
         builder.append(indentString).append("Bet Id    : ").append(getBetId()).append('\n');
-        builder.append(indentString).append("New Price : ").append(getNewPrice()).append('\n');
+        builder.append(indentString).append("New Price : ").append(getNewOdds()).append('\n');
 
         return builder.toString();
     }

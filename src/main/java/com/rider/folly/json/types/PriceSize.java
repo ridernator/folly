@@ -24,6 +24,24 @@ public class PriceSize {
     }
 
     @Override
+    public boolean equals(final Object otherObject) {
+        boolean returnVal = false;
+
+        if (otherObject != null) {
+            if (otherObject instanceof PriceSize) {
+                final PriceSize other = (PriceSize) otherObject;
+
+                returnVal = true;
+
+                returnVal &= (getAmount() == other.getAmount());
+                returnVal &= (getOdds() == other.getOdds());
+            }
+        }
+
+        return returnVal;
+    }
+
+    @Override
     public String toString() {
         return toString(0);
     }

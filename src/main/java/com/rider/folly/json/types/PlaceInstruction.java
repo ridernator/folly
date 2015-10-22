@@ -86,6 +86,35 @@ public class PlaceInstruction {
         return side;
     }
 
+    public void setHandicap(final double handicap) {
+        this.handicap = handicap;
+    }
+
+    public void setLimitOnCloseOrder(final LimitOnCloseOrder limitOnCloseOrder) {
+        this.limitOnCloseOrder = limitOnCloseOrder;
+    }
+
+    public void setLimitOrder(final LimitOrder limitOrder) {
+        this.limitOrder = limitOrder;
+    }
+
+    public void setMarketOnCloseOrder(
+            final MarketOnCloseOrder marketOnCloseOrder) {
+        this.marketOnCloseOrder = marketOnCloseOrder;
+    }
+
+    public void setOrderType(final OrderType orderType) {
+        this.orderType = orderType;
+    }
+
+    public void setSelectionId(final long selectionId) {
+        this.selectionId = selectionId;
+    }
+
+    public void setSide(final Side side) {
+        this.side = side;
+    }
+
     @Override
     public String toString() {
         return toString(0);

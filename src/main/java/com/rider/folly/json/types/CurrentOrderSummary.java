@@ -5,6 +5,7 @@ import com.rider.folly.json.enums.OrderType;
 import com.rider.folly.json.enums.PersistenceType;
 import com.rider.folly.json.enums.Side;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * Summary of a current order.
@@ -117,7 +118,7 @@ public class CurrentOrderSummary {
      */
     private String regulatorCode;
 
-    public double getAveragePriceMatched() {
+    public double getAverageOddsMatched() {
         return averagePriceMatched;
     }
 
@@ -173,28 +174,118 @@ public class CurrentOrderSummary {
         return side;
     }
 
-    public double getSizeCancelled() {
+    public double getAmountCancelled() {
         return sizeCancelled;
     }
 
-    public double getSizeLapsed() {
+    public double getAmountLapsed() {
         return sizeLapsed;
     }
 
-    public double getSizeMatched() {
+    public double getAmountMatched() {
         return sizeMatched;
     }
 
-    public double getSizeRemaining() {
+    public double getAmountRemaining() {
         return sizeRemaining;
     }
 
-    public double getSizeVoided() {
+    public double getAmountVoided() {
         return sizeVoided;
     }
 
     public OrderStatus getStatus() {
         return status;
+    }
+
+    @Override
+    public boolean equals(final Object otherObject) {
+        boolean returnVal = false;
+
+        if (otherObject != null) {
+            if (otherObject instanceof CurrentOrderSummary) {
+                final CurrentOrderSummary other = (CurrentOrderSummary) otherObject;
+
+                returnVal = true;
+
+                if (getBetId() == null) {
+                    returnVal &= (other.getBetId() == null);
+                } else {
+                    returnVal &= (getBetId().equals(other.getBetId()));
+                }
+
+                if (getMarketId() == null) {
+                    returnVal &= (other.getMarketId() == null);
+                } else {
+                    returnVal &= (getMarketId().equals(other.getMarketId()));
+                }
+
+                if (getMatchedDate() == null) {
+                    returnVal &= (other.getMatchedDate() == null);
+                } else {
+                    returnVal &= (getMatchedDate().equals(other.getMatchedDate()));
+                }
+
+                if (getOrderType() == null) {
+                    returnVal &= (other.getOrderType() == null);
+                } else {
+                    returnVal &= (getOrderType().equals(other.getOrderType()));
+                }
+
+                if (getPersistenceType() == null) {
+                    returnVal &= (other.getPersistenceType() == null);
+                } else {
+                    returnVal &= (getPersistenceType().equals(other.getPersistenceType()));
+                }
+
+                if (getPlacedDate() == null) {
+                    returnVal &= (other.getPlacedDate() == null);
+                } else {
+                    returnVal &= (getPlacedDate().equals(other.getPlacedDate()));
+                }
+
+                if (getPriceSize() == null) {
+                    returnVal &= (other.getPriceSize() == null);
+                } else {
+                    returnVal &= (getPriceSize().equals(other.getPriceSize()));
+                }
+
+                if (getRegulatorAuthCode() == null) {
+                    returnVal &= (other.getRegulatorAuthCode() == null);
+                } else {
+                    returnVal &= (getRegulatorAuthCode().equals(other.getRegulatorAuthCode()));
+                }
+
+                if (getRegulatorCode() == null) {
+                    returnVal &= (other.getRegulatorCode() == null);
+                } else {
+                    returnVal &= (getRegulatorCode().equals(other.getRegulatorCode()));
+                }
+
+                if (getSide() == null) {
+                    returnVal &= (other.getSide() == null);
+                } else {
+                    returnVal &= (getSide().equals(other.getSide()));
+                }
+
+                if (getStatus() == null) {
+                    returnVal &= (other.getStatus() == null);
+                } else {
+                    returnVal &= (getStatus().equals(other.getStatus()));
+                }
+
+                returnVal &= (getBspLiability() == other.getBspLiability());
+                returnVal &= (getHandicap() == other.getHandicap());
+                returnVal &= (getSelectionId() == other.getSelectionId());
+                returnVal &= (getAmountCancelled() == other.getAmountCancelled());
+                returnVal &= (getAmountLapsed() == other.getAmountLapsed());
+                returnVal &= (getAmountMatched() == other.getAmountMatched());
+                returnVal &= (getAmountRemaining() == other.getAmountRemaining());
+                returnVal &= (getAmountVoided() == other.getAmountVoided());
+            }
+        }
+
+        return returnVal;
     }
 
     @Override
@@ -233,13 +324,13 @@ public class CurrentOrderSummary {
         } else {
             builder.append(indentString).append("Matched Date          : ").append(getMatchedDate()).append('\n');
         }
-        
-        builder.append(indentString).append("Average Price Matched : ").append(getAveragePriceMatched()).append('\n');
-        builder.append(indentString).append("Size Matched          : ").append(getSizeMatched()).append('\n');
-        builder.append(indentString).append("Size Remaining        : ").append(getSizeRemaining()).append('\n');
-        builder.append(indentString).append("Size Lapsed           : ").append(getSizeLapsed()).append('\n');
-        builder.append(indentString).append("Size Cancelled        : ").append(getSizeCancelled()).append('\n');
-        builder.append(indentString).append("Size Voided           : ").append(getSizeVoided()).append('\n');
+
+        builder.append(indentString).append("Average Odds Matched  : ").append(getAverageOddsMatched()).append('\n');
+        builder.append(indentString).append("Amount Matched        : ").append(getAmountMatched()).append('\n');
+        builder.append(indentString).append("Amount Remaining      : ").append(getAmountRemaining()).append('\n');
+        builder.append(indentString).append("Amount Lapsed         : ").append(getAmountLapsed()).append('\n');
+        builder.append(indentString).append("Amount Cancelled      : ").append(getAmountCancelled()).append('\n');
+        builder.append(indentString).append("Amount Voided         : ").append(getAmountVoided()).append('\n');
         builder.append(indentString).append("Regulator Auth Code   : ").append(getRegulatorAuthCode()).append('\n');
         builder.append(indentString).append("Regulator Code        : ").append(getRegulatorCode()).append('\n');
 

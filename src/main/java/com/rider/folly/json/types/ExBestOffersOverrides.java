@@ -47,7 +47,7 @@ public class ExBestOffersOverrides {
      */
     private int rollupLiabilityFactor;
 
-    public int getBestPricesDepth() {
+    public int getBestOddsDepth() {
         return bestPricesDepth;
     }
 
@@ -67,8 +67,8 @@ public class ExBestOffersOverrides {
         return rollupModel;
     }
 
-    public void setBestPricesDepth(final int bestPricesDepth) {
-        this.bestPricesDepth = bestPricesDepth;
+    public void setBestOddsDepth(final int bestOddsDepth) {
+        this.bestPricesDepth = bestOddsDepth;
     }
 
     public void setRollupLiabilityFactor(final int rollupLiabilityFactor) {
@@ -101,7 +101,7 @@ public class ExBestOffersOverrides {
             indentString += ' ';
         }
 
-        builder.append(indentString).append("Best Prices Depth          : ").append(getBestPricesDepth()).append('\n');
+        builder.append(indentString).append("Best Odds Depth            : ").append(getBestOddsDepth()).append('\n');
         builder.append(indentString).append("Rollup Model               : ").append(getRollupLimit()).append('\n');
         builder.append(indentString).append("Rollup Limit               : ").append(getRollupLimit()).append('\n');
         builder.append(indentString).append("Rollup Liability Threshold : ").append(getRollupLiabilityThreshold()).append('\n');

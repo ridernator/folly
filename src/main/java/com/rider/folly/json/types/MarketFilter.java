@@ -1,7 +1,9 @@
 package com.rider.folly.json.types;
 
+import com.rider.folly.json.enums.CountryCode;
 import com.rider.folly.json.enums.MarketBettingType;
 import com.rider.folly.json.enums.OrderStatus;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -78,7 +80,7 @@ public class MarketFilter {
     /**
      * Restrict to markets that are in the specified country or countries
      */
-    private Set<String> marketCountries;
+    private Set<CountryCode> marketCountries;
 
     /**
      * Restrict to markets that match the type of the market (i.e., MATCH_ODDS,
@@ -103,7 +105,7 @@ public class MarketFilter {
             competitionIds = new HashSet<>();
         }
 
-        return competitionIds;
+        return Collections.unmodifiableSet(competitionIds);
     }
 
     public Set<String> getEventIds() {
@@ -111,7 +113,7 @@ public class MarketFilter {
             eventIds = new HashSet<>();
         }
 
-        return eventIds;
+        return Collections.unmodifiableSet(eventIds);
     }
 
     public Set<String> getEventTypeIds() {
@@ -119,7 +121,7 @@ public class MarketFilter {
             eventTypeIds = new HashSet<>();
         }
 
-        return eventTypeIds;
+        return Collections.unmodifiableSet(eventTypeIds);
     }
 
     public Set<String> getExchangeIds() {
@@ -127,7 +129,7 @@ public class MarketFilter {
             exchangeIds = new HashSet<>();
         }
 
-        return exchangeIds;
+        return Collections.unmodifiableSet(exchangeIds);
     }
 
     public Set<MarketBettingType> getMarketBettingTypes() {
@@ -135,15 +137,15 @@ public class MarketFilter {
             marketBettingTypes = new HashSet<>();
         }
 
-        return marketBettingTypes;
+        return Collections.unmodifiableSet(marketBettingTypes);
     }
 
-    public Set<String> getMarketCountries() {
+    public Set<CountryCode> getMarketCountries() {
         if (marketCountries == null) {
             marketCountries = new HashSet<>();
         }
 
-        return marketCountries;
+        return Collections.unmodifiableSet(marketCountries);
     }
 
     public Set<String> getMarketIds() {
@@ -151,7 +153,7 @@ public class MarketFilter {
             marketIds = new HashSet<>();
         }
 
-        return marketIds;
+        return Collections.unmodifiableSet(marketIds);
     }
 
     public TimeRange getMarketStartTime() {
@@ -163,7 +165,7 @@ public class MarketFilter {
             marketTypeCodes = new HashSet<>();
         }
 
-        return marketTypeCodes;
+        return Collections.unmodifiableSet(marketTypeCodes);
     }
 
     public String getTextQuery() {
@@ -175,7 +177,7 @@ public class MarketFilter {
             venues = new HashSet<>();
         }
 
-        return venues;
+        return Collections.unmodifiableSet(venues);
     }
 
     public Set<OrderStatus> getWithOrders() {
@@ -183,7 +185,7 @@ public class MarketFilter {
             withOrders = new HashSet<>();
         }
 
-        return withOrders;
+        return Collections.unmodifiableSet(withOrders);
     }
 
     public Boolean isBspOnly() {
@@ -197,6 +199,98 @@ public class MarketFilter {
     public Boolean isTurnInPlayEnabled() {
         return turnInPlayEnabled;
     }
+
+    public void setBspOnly(final Boolean bspOnly) {
+        this.bspOnly = bspOnly;
+    }
+
+    public void setInPlayOnly(final Boolean inPlayOnly) {
+        this.inPlayOnly = inPlayOnly;
+    }
+
+    public void setTurnInPlayEnabled(final Boolean turnInPlayEnabled) {
+        this.turnInPlayEnabled = turnInPlayEnabled;
+    }
+
+    public void addCompetitionId(final String competitionId) {
+        if (competitionIds == null) {
+            competitionIds = new HashSet<>();
+        }
+
+        competitionIds.add(competitionId);
+    }
+
+    public void addEventId(final String eventId) {
+        if (eventIds == null) {
+            eventIds = new HashSet<>();
+        }
+
+        eventIds.add(eventId);
+    }
+
+    public void addEventTypeId(final String eventTypeId) {
+        if (eventTypeIds == null) {
+            eventTypeIds = new HashSet<>();
+        }
+
+        eventTypeIds.add(eventTypeId);
+    }
+
+    public void addExchangeId(final String exchangeId) {
+        if (exchangeIds == null) {
+            exchangeIds = new HashSet<>();
+        }
+
+        exchangeIds.add(exchangeId);
+    }
+
+    public void addMarketBettingType(final MarketBettingType marketBettingType) {
+        if (marketBettingTypes == null) {
+            marketBettingTypes = new HashSet<>();
+        }
+
+        marketBettingTypes.add(marketBettingType);
+    }
+
+    public void addMarketCountry(final CountryCode marketCountry) {
+        if (marketCountries == null) {
+            marketCountries = new HashSet<>();
+        }
+
+        marketCountries.add(marketCountry);
+    }
+
+    public void addMarketId(final String marketId) {
+        if (marketIds == null) {
+            marketIds = new HashSet<>();
+        }
+
+        marketIds.add(marketId);
+    }
+
+    public void addMarketTypeCode(final String marketTypeCode) {
+        if (marketTypeCodes == null) {
+            marketTypeCodes = new HashSet<>();
+        }
+
+        marketTypeCodes.add(marketTypeCode);
+    }
+
+    public void addWithOrder(final OrderStatus withOrder) {
+        if (withOrders == null) {
+            withOrders = new HashSet<>();
+        }
+
+        withOrders.add(withOrder);
+    }
+
+    public void setTextQuery(final String textQuery) {
+        this.textQuery = textQuery;
+    }
+
+    public void setMarketStartTime(TimeRange marketStartTime) {
+        this.marketStartTime = marketStartTime;
+    }    
 
     @Override
     public String toString() {
@@ -259,8 +353,8 @@ public class MarketFilter {
 
         builder.append(indentString).append("Market Countries     : ").append('\n');
 
-        for (final String string : getMarketCountries()) {
-            builder.append(indentString).append(indentString).append(string).append('\n');
+        for (final CountryCode countryCode : getMarketCountries()) {
+            builder.append(indentString).append(indentString).append(countryCode).append('\n');
         }
 
         builder.append(indentString).append("Market Type Codes    : ").append('\n');

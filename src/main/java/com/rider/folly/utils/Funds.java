@@ -52,10 +52,10 @@ public class Funds {
     }
 
     private Funds() {
-        new Thread("Funds Thread") {
+        new Thread("Funds") {
             @Override
             public void run() {
-                long nextTime = System.currentTimeMillis() + SLEEP_PERIOD;
+                long sleepUntil = System.currentTimeMillis() + SLEEP_PERIOD;
                 AccountFundsResponse response;
                 boolean somethingHasChanged;
 
@@ -111,12 +111,12 @@ public class Funds {
                     }
 
                     try {
-                        Thread.sleep(nextTime - System.currentTimeMillis());
+                        Thread.sleep(sleepUntil - System.currentTimeMillis());
                     } catch (final InterruptedException exception) {
                         // Ignore
                     }
 
-                    nextTime += SLEEP_PERIOD;
+                    sleepUntil += SLEEP_PERIOD;
                 }
             }
         }.start();

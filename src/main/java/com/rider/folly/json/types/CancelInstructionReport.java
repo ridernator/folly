@@ -40,7 +40,7 @@ public class CancelInstructionReport {
         return instruction;
     }
 
-    public double getSizeCancelled() {
+    public double getAmountCancelled() {
         return sizeCancelled;
     }
 
@@ -61,17 +61,17 @@ public class CancelInstructionReport {
             indentString += ' ';
         }
 
-        builder.append(indentString).append("Status         : ").append(getStatus()).append('\n');
-        builder.append(indentString).append("Error Code     : ").append(getErrorCode()).append('\n');
+        builder.append(indentString).append("Status           : ").append(getStatus()).append('\n');
+        builder.append(indentString).append("Error Code       : ").append(getErrorCode()).append('\n');
 
         if (getInstruction() == null) {
-            builder.append(indentString).append("Instruction    : ").append("Not Set").append('\n');
+            builder.append(indentString).append("Instruction      : ").append("Not Set").append('\n');
         } else {
-            builder.append(indentString).append("Instruction    : ").append('\n').append(getInstruction().toString(indent + Indent.INDENT_SIZE));
+            builder.append(indentString).append("Instruction      : ").append('\n').append(getInstruction().toString(indent + Indent.INDENT_SIZE));
         }
 
-        builder.append(indentString).append("Size Cancelled : ").append(getSizeCancelled()).append('\n');
-        builder.append(indentString).append("Cancelled Date : ").append(getCancelledDate()).append('\n');
+        builder.append(indentString).append("Amount Cancelled : ").append(getAmountCancelled()).append('\n');
+        builder.append(indentString).append("Cancelled Date   : ").append(getCancelledDate()).append('\n');
 
         return builder.toString();
     }

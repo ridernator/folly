@@ -105,7 +105,7 @@ public class StatementLegacyData {
      */
     private String winLose;
 
-    public double getAvgPrice() {
+    public double getAvgOdds() {
         return avgPrice;
     }
 
@@ -113,7 +113,7 @@ public class StatementLegacyData {
         return betCategoryType;
     }
 
-    public double getBetSize() {
+    public double getBetAmount() {
         return betSize;
     }
 
@@ -190,24 +190,24 @@ public class StatementLegacyData {
             indentString += ' ';
         }
 
-        builder.append(indentString).append("Average Price : ").append(getAvgPrice()).append('\n');
-        builder.append(indentString).append("Bet Size : ").append(getBetSize()).append('\n');
-        builder.append(indentString).append("Bet Type : ").append(getBetType()).append('\n');
+        builder.append(indentString).append("Average Odds      : ").append(getAvgOdds()).append('\n');
+        builder.append(indentString).append("Bet Amount        : ").append(getBetAmount()).append('\n');
+        builder.append(indentString).append("Bet Type          : ").append(getBetType()).append('\n');
         builder.append(indentString).append("Bet Category Type : ").append(getBetCategoryType()).append('\n');
-        builder.append(indentString).append("Commission Rate : ").append(getCommissionRate()).append('\n');
-        builder.append(indentString).append("Event Id : ").append(getEventId()).append('\n');
-        builder.append(indentString).append("Event Type Id : ").append(getEventTypeId()).append('\n');
-        builder.append(indentString).append("Full Market Name : ").append(getFullMarketName()).append('\n');
-        builder.append(indentString).append("Gross Bet Amount : ").append(getGrossBetAmount()).append('\n');
-        builder.append(indentString).append("Market Name : ").append(getMarketName()).append('\n');
-        builder.append(indentString).append("Market Type : ").append(getMarketType()).append('\n');
-        builder.append(indentString).append("Placed Date : ").append(getPlacedDate()).append('\n');
-        builder.append(indentString).append("Selection Id : ").append(getSelectionId()).append('\n');
-        builder.append(indentString).append("Selection Name : ").append(getSelectionName()).append('\n');
-        builder.append(indentString).append("Start Date : ").append(getStartDate()).append('\n');
-        builder.append(indentString).append("Transaction Type : ").append(getTransactionType()).append('\n');
-        builder.append(indentString).append("Transaction Id : ").append(getTransactionId()).append('\n');
-        builder.append(indentString).append("Win Lose : ").append(getWinLose()).append('\n');
+        builder.append(indentString).append("Commission Rate   : ").append(getCommissionRate()).append('\n');
+        builder.append(indentString).append("Event Id          : ").append(getEventId()).append('\n');
+        builder.append(indentString).append("Event Type Id     : ").append(getEventTypeId()).append('\n');
+        builder.append(indentString).append("Full Market Name  : ").append(getFullMarketName()).append('\n');
+        builder.append(indentString).append("Gross Bet Amount  : ").append(getGrossBetAmount()).append('\n');
+        builder.append(indentString).append("Market Name       : ").append(getMarketName()).append('\n');
+        builder.append(indentString).append("Market Type       : ").append(getMarketType()).append('\n');
+        builder.append(indentString).append("Placed Date       : ").append(getPlacedDate()).append('\n');
+        builder.append(indentString).append("Selection Id      : ").append(getSelectionId()).append('\n');
+        builder.append(indentString).append("Selection Name    : ").append(getSelectionName()).append('\n');
+        builder.append(indentString).append("Start Date        : ").append(getStartDate()).append('\n');
+        builder.append(indentString).append("Transaction Type  : ").append(getTransactionType()).append('\n');
+        builder.append(indentString).append("Transaction Id    : ").append(getTransactionId()).append('\n');
+        builder.append(indentString).append("Win Lose          : ").append(getWinLose()).append('\n');
 
         return builder.toString();
     }

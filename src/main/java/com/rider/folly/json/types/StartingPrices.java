@@ -56,7 +56,7 @@ public class StartingPrices {
         return backStakeTaken;
     }
 
-    public double getFarPrice() {
+    public double getFarOdds() {
         return farPrice;
     }
 
@@ -68,7 +68,7 @@ public class StartingPrices {
         return layLiabilityTaken;
     }
 
-    public double getNearPrice() {
+    public double getNearOdds() {
         return nearPrice;
     }
 
@@ -85,8 +85,8 @@ public class StartingPrices {
             indentString += ' ';
         }
 
-        builder.append(indentString).append("Near Price          : ").append(getNearPrice()).append('\n');
-        builder.append(indentString).append("Far Price           : ").append(getFarPrice()).append('\n');
+        builder.append(indentString).append("Near Odds           : ").append(getNearOdds()).append('\n');
+        builder.append(indentString).append("Far Odds            : ").append(getFarOdds()).append('\n');
         builder.append(indentString).append("Back Stake Taken    : ").append('\n');
 
         for (final PriceSize priceSize : getBackStakeTaken()) {

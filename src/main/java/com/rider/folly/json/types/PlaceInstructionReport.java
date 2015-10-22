@@ -45,7 +45,7 @@ public class PlaceInstructionReport {
      */
     private double sizeMatched;
 
-    public double getAveragePriceMatched() {
+    public double getAverageOddsMatched() {
         return averagePriceMatched;
     }
 
@@ -65,7 +65,7 @@ public class PlaceInstructionReport {
         return placedDate;
     }
 
-    public double getSizeMatched() {
+    public double getAmountMatched() {
         return sizeMatched;
     }
 
@@ -97,8 +97,8 @@ public class PlaceInstructionReport {
 
         builder.append(indentString).append("Bet Id                : ").append(getBetId()).append('\n');
         builder.append(indentString).append("Placed Date           : ").append(getPlacedDate()).append('\n');
-        builder.append(indentString).append("Average Price Matched : ").append(getAveragePriceMatched()).append('\n');
-        builder.append(indentString).append("Size Matched          : ").append(getSizeMatched()).append('\n');
+        builder.append(indentString).append("Average Odds Matched : ").append(getAverageOddsMatched()).append('\n');
+        builder.append(indentString).append("Amount Matched          : ").append(getAmountMatched()).append('\n');
 
         return builder.toString();
     }

@@ -89,7 +89,7 @@ public class Order {
      */
     private double sizeVoided;
 
-    public double getAveragePriceMatched() {
+    public double getAverageOddsMatched() {
         return avgPriceMatched;
     }
 
@@ -113,7 +113,7 @@ public class Order {
         return placedDate;
     }
 
-    public double getPrice() {
+    public double getOdds() {
         return price;
     }
 
@@ -121,27 +121,27 @@ public class Order {
         return side;
     }
 
-    public double getSize() {
+    public double getAmount() {
         return size;
     }
 
-    public double getSizeCancelled() {
+    public double getAmountCancelled() {
         return sizeCancelled;
     }
 
-    public double getSizeLapsed() {
+    public double getAmountLapsed() {
         return sizeLapsed;
     }
 
-    public double getSizeMatched() {
+    public double getAmountMatched() {
         return sizeMatched;
     }
 
-    public double getSizeRemaining() {
+    public double getAmountRemaining() {
         return sizeRemaining;
     }
 
-    public double getSizeVoided() {
+    public double getAmountVoided() {
         return sizeVoided;
     }
 
@@ -167,16 +167,16 @@ public class Order {
         builder.append(indentString).append("Status                : ").append(getStatus()).append('\n');
         builder.append(indentString).append("Persistence Type      : ").append(getPersistenceType()).append('\n');
         builder.append(indentString).append("Side                  : ").append(getSide()).append('\n');
-        builder.append(indentString).append("Price                 : ").append(getPrice()).append('\n');
-        builder.append(indentString).append("Size                  : ").append(getSize()).append('\n');
+        builder.append(indentString).append("Odds                  : ").append(getOdds()).append('\n');
+        builder.append(indentString).append("Amount                : ").append(getAmount()).append('\n');
         builder.append(indentString).append("BSP Liability         : ").append(getBspLiability()).append('\n');
         builder.append(indentString).append("Placed Date           : ").append(getPlacedDate()).append('\n');
-        builder.append(indentString).append("Average Price Matched : ").append(getAveragePriceMatched()).append('\n');
-        builder.append(indentString).append("Size Matched          : ").append(getSizeMatched()).append('\n');
-        builder.append(indentString).append("Size Remaining        : ").append(getSizeRemaining()).append('\n');
-        builder.append(indentString).append("Size Lapsed           : ").append(getSizeLapsed()).append('\n');
-        builder.append(indentString).append("Size Cancelled        : ").append(getSizeCancelled()).append('\n');
-        builder.append(indentString).append("Size Voided           : ").append(getSizeVoided()).append('\n');
+        builder.append(indentString).append("Average Odds Matched  : ").append(getAverageOddsMatched()).append('\n');
+        builder.append(indentString).append("Amount Matched        : ").append(getAmountMatched()).append('\n');
+        builder.append(indentString).append("Amount Remaining      : ").append(getAmountRemaining()).append('\n');
+        builder.append(indentString).append("Amount Lapsed         : ").append(getAmountLapsed()).append('\n');
+        builder.append(indentString).append("Amount Cancelled      : ").append(getAmountCancelled()).append('\n');
+        builder.append(indentString).append("Amount Voided         : ").append(getAmountVoided()).append('\n');
 
         return builder.toString();
     }

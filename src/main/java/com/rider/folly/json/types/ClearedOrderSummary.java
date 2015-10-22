@@ -201,11 +201,11 @@ public class ClearedOrderSummary {
         return placedDate;
     }
 
-    public double getPriceMatched() {
+    public double getOddsMatched() {
         return priceMatched;
     }
 
-    public double getPriceRequested() {
+    public double getOddsRequested() {
         return priceRequested;
     }
 
@@ -225,15 +225,15 @@ public class ClearedOrderSummary {
         return side;
     }
 
-    public double getSizeCancelled() {
+    public double getAmountCancelled() {
         return sizeCancelled;
     }
 
-    public double getSizeSettled() {
+    public double getAmountSettled() {
         return sizeSettled;
     }
 
-    public boolean isPriceReduced() {
+    public boolean areOddsReduced() {
         return priceReduced;
     }
 
@@ -268,16 +268,16 @@ public class ClearedOrderSummary {
         }
 
         builder.append(indentString).append("Bet Outcome       : ").append(getBetOutcome()).append('\n');
-        builder.append(indentString).append("Price Requested   : ").append(getPriceRequested()).append('\n');
+        builder.append(indentString).append("Odds Requested    : ").append(getOddsRequested()).append('\n');
         builder.append(indentString).append("Settled Date      : ").append(getSettledDate()).append('\n');
         builder.append(indentString).append("Last Matched Date : ").append(getLastMatchedDate()).append('\n');
         builder.append(indentString).append("Bet Count         : ").append(getBetCount()).append('\n');
         builder.append(indentString).append("Commission        : ").append(getCommission()).append('\n');
-        builder.append(indentString).append("Price Matched     : ").append(getPriceMatched()).append('\n');
-        builder.append(indentString).append("Price Reduced     : ").append(isPriceReduced()).append('\n');
-        builder.append(indentString).append("Size Settled      : ").append(getSizeSettled()).append('\n');
+        builder.append(indentString).append("Odds Matched      : ").append(getOddsMatched()).append('\n');
+        builder.append(indentString).append("Odds Reduced      : ").append(areOddsReduced()).append('\n');
+        builder.append(indentString).append("Amount Settled    : ").append(getAmountSettled()).append('\n');
         builder.append(indentString).append("Profit            : ").append(getProfit()).append('\n');
-        builder.append(indentString).append("Size Cancelled    : ").append(getSizeCancelled()).append('\n');
+        builder.append(indentString).append("Amount Cancelled  : ").append(getAmountCancelled()).append('\n');
 
         return builder.toString();
     }

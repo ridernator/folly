@@ -81,7 +81,7 @@ public class Runner {
         return handicap;
     }
 
-    public double getLastPriceTraded() {
+    public double getLastOddsTraded() {
         return lastPriceTraded;
     }
 
@@ -138,7 +138,7 @@ public class Runner {
         builder.append(indentString).append("Handicap          : ").append(getHandicap()).append('\n');
         builder.append(indentString).append("Status            : ").append(getStatus()).append('\n');
         builder.append(indentString).append("Adjustment Factor : ").append(getAdjustmentFactor()).append('\n');
-        builder.append(indentString).append("Last Price Traded : ").append(getLastPriceTraded()).append('\n');
+        builder.append(indentString).append("Last Odds Traded  : ").append(getLastOddsTraded()).append('\n');
         builder.append(indentString).append("Total Matched     : ").append(getTotalMatched()).append('\n');
         builder.append(indentString).append("Removal Date      : ").append(getRemovalDate()).append('\n');
 

@@ -20,7 +20,7 @@ public class LimitOnCloseOrder {
         return liability;
     }
 
-    public double getPrice() {
+    public double getOdds() {
         return price;
     }
 
@@ -37,7 +37,7 @@ public class LimitOnCloseOrder {
             indentString += ' ';
         }
 
-        builder.append(indentString).append("Price     : ").append(getPrice()).append('\n');
+        builder.append(indentString).append("Odds      : ").append(getOdds()).append('\n');
         builder.append(indentString).append("Liability : ").append(getLiability()).append('\n');
 
         return builder.toString();
