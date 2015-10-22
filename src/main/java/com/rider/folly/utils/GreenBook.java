@@ -24,9 +24,11 @@ public class GreenBook {
 
         double backAmount = 2;
         double backOdds = 10;
-        double layOdds = 9.6;
+        double layOdds = 8;
+        double bestLay = greenBook.getBestLay(backAmount, backOdds, layOdds);
+        double winAmount = bestLay - backAmount;
 
-        System.out.printf("Lay £%4.2f @ %4.2f after £%4.2f @ %4.2f to gain £%4.2f\n", greenBook.getBestLay(backAmount, backOdds, layOdds), layOdds, backAmount, backOdds, 1.0f);
+        System.out.printf("Lay £%4.4f @ %4.2f after £%4.2f @ %4.2f to gain roughly £%4.2f\n", bestLay, layOdds, backAmount, backOdds, winAmount);
     }
 
 }
