@@ -151,7 +151,8 @@ public class Folly {
             mutex.lock();
 
             httpPost.setURI(new URI(OperationType.KEEP_ALIVE.getAddress()));
-
+            httpPost.setEntity(new StringEntity(""));
+            
             keepAliveResponse = gson.fromJson(httpClient.execute(httpPost, responseHandler), KeepAliveResponse.class);
 
             if (keepAliveResponse.getStatus().equals(KeepAliveStatus.SUCCESS)) {
